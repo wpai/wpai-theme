@@ -1,0 +1,53 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+h1 {
+    line-height: 1.25 !important;
+}
+
+article header {
+    max-width: none !important;
+}
+
+article > :not(.entry-content), .entry-content > * {
+    max-width: none !important;
+}
+
+.content-container {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-container p, .content-container li {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+}
+
+
+.content-container h2 {
+    font-size: 42px !important;
+    line-height: 50px !important;
+    margin-bottom: 32px;
+    font-weight: 700;
+}
+
+.content-container h3 {
+    font-size: 32px !important;
+    line-height: 38px !important;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.content-container img {
+    border-radius: 0.75rem;
+    margin-bottom: 58px;
+}
+
+@media (max-width: 1140px) {
+    .content-container {
+        width: auto;
+    }
+}
