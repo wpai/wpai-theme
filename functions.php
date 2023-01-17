@@ -3,6 +3,9 @@
 /**
  * Theme setup.
  */
+
+require_once "translations.php";
+
 function tailpress_setup() {
 	add_theme_support( 'title-tag' );
 
@@ -119,15 +122,6 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
 require_once("options/site.php");
 SiteOptions::register();
 
-
-/**
- * Add google fonts
- */
-
-function add_google_fonts() {
-	wp_enqueue_style( 'add_google_fonts', '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> ', false );
-}
-add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
 /**
  * Add custom css file
@@ -394,3 +388,16 @@ add_action('after_switch_theme', 'set_permalink_structure');
  * Force rewrite
  */
 add_filter( 'got_rewrite', '__return_true', 999 );
+
+
+/*
+ * Get country code
+ */
+function get_country_code() {
+	return get_option('country_code');
+}
+
+function get_translation($key) {
+    global $theme_translations;
+    return $theme_translations[get_country_code()][$key];
+}

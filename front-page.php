@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 
 	<div class="mx-auto max-w-6xl px-4 lg:px-0 flex flex-col my-12">
+		<?php if (get_option('site_description')) {?>
+            <div class="mb-16 font-medium">
+				<?php echo get_option('site_description'); ?>
+            </div>
+		<?php } ?>
         <div class="grid grid-cols-3 gap-8 w-full">
             <!-- Get WP options -->
             <?php
@@ -19,11 +24,6 @@
                 </div>
             <?php endwhile; wp_reset_postdata(); ?>
         </div>
-        <?php if (get_option('site_description')) {?>
-            <div class="mt-16 text-gray-700 font-light">
-                <?php echo get_option('site_description'); ?>
-            </div>
-        <?php } ?>
 	</div>
 
 <?php
